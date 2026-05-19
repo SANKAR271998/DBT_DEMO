@@ -40,4 +40,7 @@ models:
     # Applies to all files under models/example/
     bronze:
       +materialized: table
+    silver:
+      +materialized: table
+      +schema: silver
       
