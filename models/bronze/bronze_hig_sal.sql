@@ -1,7 +1,6 @@
-{% set incremental_flag =1%}
-{% set incremental_col = 'record_created_at' %}
+{{config(materialized='incremental')}}
 
 SELECT * FROM {{source('LND','hig_sal')}}
-{%if incremental_flag ==1 and is_incremental() %}
-    where {{incremental_col}} > (select coalesce(max({{incremental_col}}),'1900-01-01') from {{this}})
+{%if is_incremental() %}
+    where created_date > (select coalesce(max(created_date),'1900-01-01') from {{this}})
     {%endif%}
