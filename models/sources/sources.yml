@@ -1,0 +1,8 @@
+sources:
+  - name: LND
+    database: SANKAR_DB
+    schema: LND
+    tables:
+      - name: employee
+      - name: emp
+      - name: hig_sal

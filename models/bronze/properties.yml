@@ -1,0 +1,13 @@
+models:
+  - name: bronze_emp
+    config:
+      materialized: table
+
+  - name: bronze_employee
+    config:
+      materialized: table
+
+  - name: bronze_hig_sal
+    config:
+      materialized: table
+   
