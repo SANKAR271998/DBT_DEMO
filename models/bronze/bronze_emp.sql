@@ -2,6 +2,6 @@
 
 SELECT * FROM {{source('LND','emp')}}
 {%if is_incremental() %}
-    where created_date > (select coalesce(max(created_date),'1900-01-01') from {{this}})
+    where record_created_at > (select coalesce(max(record_created_at),'1900-01-01') from {{this}})
     {%endif%}
 
