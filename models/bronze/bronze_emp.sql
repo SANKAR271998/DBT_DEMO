@@ -1,4 +1,4 @@
-{{config(materialized='incremental')}}
+{{config(materialized='incremental',unique_key = 'employee_id')}}
 
 SELECT * FROM {{source('LND','emp')}}
 {%if is_incremental() %}
