@@ -1,1 +1,2 @@
-select * from {{ref('bronze_employee')}}
+SELECT * FROM {{ref('obt')}}
+

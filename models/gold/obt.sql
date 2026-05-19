@@ -6,7 +6,7 @@
     },
     {
         "table" : "SANKAR_DB.silver.silver_EMP",
-        "columns" : "silver_emp.annual_salary,silver_emp.record_created_at,silver_emp.new_salary",
+        "columns" : "silver_emp.annual_salary,silver_emp.record_created_at,silver_emp.new_salary,silver_emp.hire_date",
         "alias" : "silver_emp",
         "join_condition" : "silver_employee.employee_id = silver_emp.employee_id"
     }
@@ -26,5 +26,8 @@ FROM
     ON {{ config['join_condition'] }}
         {% endif %}
         {% endfor %}
+
+
+        -- we can make the changes in the dictionary but never in the harcoded for loop here
 
 

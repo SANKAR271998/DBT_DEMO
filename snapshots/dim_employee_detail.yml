@@ -1,0 +1,10 @@
+snapshots:
+  - name: dim_employee_detail
+    relation: ref('employee_detail')
+    config:
+      schema: gold
+      database: SANKAR_DB
+      unique_key: employee_id
+      strategy: timestamp
+      updated_at: hire_date
+      dbt_valid_to_current: "to_date('9999-12-31')"
